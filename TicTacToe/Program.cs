@@ -17,9 +17,9 @@ namespace TicTacToe
                 computerLetter = 'X';
             Console.WriteLine("User Letter : " + userLetter + "\t Computer Letter : " + computerLetter);
 
-            game.ShowBoard();
-            game.MakeMove(userLetter);
-            game.ShowBoard();
+            game.ShowBoard(game.board);
+            game.MakeMove(userLetter,game.board);
+            game.ShowBoard(game.board);
 
         }
     }

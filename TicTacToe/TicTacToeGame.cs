@@ -33,7 +33,7 @@ namespace TicTacToe
                 }
             }
         }
-        public void ShowBoard()
+        public void ShowBoard(char[] board)
         {
             Console.WriteLine("     |     |      ");
             Console.WriteLine("  {0}  |  {1}  |  {2}", board[1], board[2], board[3]);
@@ -46,19 +46,19 @@ namespace TicTacToe
             Console.WriteLine("     |     |      ");
         }
 
-        public void MakeMove(char userLetter)
+        public void MakeMove(char userLetter,char[] board)
         {
             int index;
             do
             {
                 Console.Write("Enter the Index You want to Place:");
                 index = Convert.ToInt32(Console.ReadLine());
-                if (index > this.board.Length || index < 1 || this.board[index] != ' ')
+                if (index > board.Length || index < 1 || board[index] != ' ')
                 {
                     Console.WriteLine("Enter Again. Cell Not Free or Out of Index");
                 }
-            } while (index > this.board.Length || index < 1 || this.board[index] != ' ');
-            this.board[index] = userLetter;
+            } while (index > board.Length || index < 1 || board[index] != ' ');
+            board[index] = userLetter;
         }
     }
 }
