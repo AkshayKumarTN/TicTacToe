@@ -55,7 +55,7 @@ namespace TicTacToe
                 index = Convert.ToInt32(Console.ReadLine());
                 if (index > board.Length || index < 1 || board[index] != ' ')
                 {
-                    Console.WriteLine("Enter Again. Cell Not Free or Out of Index");
+                    Console.WriteLine("Cell Not Free - Try Again ");
                 }
             } while (index > board.Length || index < 1 || board[index] != ' ');
             board[index] = userLetter;
