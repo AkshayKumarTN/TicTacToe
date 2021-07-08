@@ -45,5 +45,20 @@ namespace TicTacToe
             Console.WriteLine("  {0}  |  {1}  |  {2}", board[7], board[8], board[9]);
             Console.WriteLine("     |     |      ");
         }
+
+        public void MakeMove(char userLetter)
+        {
+            int index;
+            do
+            {
+                Console.Write("Enter the Index You want to Place:");
+                index = Convert.ToInt32(Console.ReadLine());
+                if (index > this.board.Length || index < 1 || this.board[index] != ' ')
+                {
+                    Console.WriteLine("Enter Again. Cell Not Free or Out of Index");
+                }
+            } while (index > this.board.Length || index < 1 || this.board[index] != ' ');
+            this.board[index] = userLetter;
+        }
     }
 }
